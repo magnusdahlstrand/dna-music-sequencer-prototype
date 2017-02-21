@@ -37,12 +37,12 @@ fs.readFile(geneFile, 'utf8', function(err, geneData) {
 		throw err;
 	}
 	geneData = geneData.split(/\n/).join('');
-	var length = geneData.length;
+	var geneLength = geneData.length;
 	var scale = scales[scaleChoice];
-	console.log(`${length} => int length;`);
-	console.log(`int notes[${length}];`);
+	console.log(`${geneLength} => int geneLength;`);
+	console.log(`int notes[geneLength];`);
 	var note;
-	for(var i = 0; i < length; i++) {
+	for(var i = 0; i < geneLength; i++) {
 		note = scale[geneData[i]];
 		console.log(`${note} => notes[${i}];`)
 		if(Number.isNaN(note)) {
